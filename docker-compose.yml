@@ -1,0 +1,25 @@
+version: "3"
+services:
+  node:
+    container_name: next-app
+    # command: [ "yarn", "dev" ]
+    command: [ "/bin/bash" ]
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: ${WORKDIR}
+    volumes:
+      - ./${ROOTDIR}:${ROOTDIR}
+    env_file:
+      - ./.env
+    environment:
+      - HOST=${HOST}
+      - PORT=${PORT}
+      - NODE_ENV=${NODE_ENV}
+    ports:
+      - ${PORT}:${PORT}
+    expose:
+      - ${PORT}
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
