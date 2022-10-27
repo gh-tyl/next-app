@@ -2,8 +2,8 @@ version: "3"
 services:
   node:
     container_name: next-app
-    # command: [ "yarn", "dev" ]
-    command: [ "/bin/bash" ]
+    command: [ "yarn", "dev" ]
+    # command: [ "/bin/bash" ]
     build:
       context: .
       dockerfile: ./Dockerfile
