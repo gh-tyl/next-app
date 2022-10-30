@@ -3,7 +3,7 @@ services:
   node:
     container_name: next-app
     command: [ "yarn", "dev" ]
-    # command: [ "/bin/bash" ]
+    # command: [ "/bin/bash" ] # for debugging
     build:
       context: .
       dockerfile: ./Dockerfile
