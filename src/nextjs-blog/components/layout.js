@@ -41,20 +41,23 @@ export default function Layout({ children, home }) {
                 ) : (
                     <>
                         <Link href="/">
-                            <a>
-                                <Image
-                                    priority
-                                    src="/images/profile.jpg"
-                                    className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
-                                    alt={name}
-                                />
-                            </a>
+                            {/* <a> */}
+                            <Image
+                                priority
+                                src="/images/profile.jpg"
+                                className={utilStyles.borderCircle}
+                                height={108}
+                                width={108}
+                                alt={name}
+                            />
+                            {/* </a> */}
                         </Link>
                         <h2 className={utilStyles.headingLg}>
-                            <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
+                            {/* <Link href="/"> */}
+                            <Link href="/" className={utilStyles.colorInherit}>
+                                {name}
+                                {/* <a className={utilStyles.colorInherit}>{name}</a> */}
+                                {/* <p className={utilStyles.colorInherit}>{name}</p> */}
                             </Link>
                         </h2>
                     </>
@@ -64,7 +67,8 @@ export default function Layout({ children, home }) {
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
-                        <a>← Back to home</a>
+                        {/* <a>← Back to home</a> */}
+                        ← Back to home
                     </Link>
                 </div>
             )}
